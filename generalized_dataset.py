@@ -42,20 +42,20 @@ class GeneralizedDataset:
 
         if self.mode == 'train':
             sample = (image, target)
-            #sample = RandomHorizontalFlip(flip_prob=.5)(sample)
             transformed = transform_train(image=image.permute(1,2,0).numpy(), bboxes=target['boxes'],
-                                    masks=[i.numpy() for i in target['masks']],
                                     class_labels=target['labels'])
         if self.mode == 'val':
             transformed = transform_val(image=image.permute(1,2,0).numpy(), bboxes=target['boxes'],
-                                    masks=[i.numpy() for i in target['masks']],
                                     class_labels=target['labels'])
 
         image = transformed['image']
-        #target['boxes'], target['masks'], target['labels'] = transformed['bboxes'], transformed['masks'], transformed['class_labels']
-        target['boxes'] = torch.stack([torch.Tensor(i) for i in transformed['bboxes']])
-        target['masks'] = torch.stack([i for i in transformed['masks']])
-        target['labels'] = torch.stack([torch.Tensor(i) for i in transformed['class_labels']])
+
+        if bool([torch.Tensor(i) for i in transformed['class_labels']]):
+            target['boxes'] = torch.stack([torch.Tensor(i) for i in transformed['bboxes']])
+            target['labels'] = torch.stack([torch.Tensor(i) for i in transformed['class_labels']])
+        else:
+            target['boxes'] = torch.empty(0,4).to(torch.float32)
+            target['labels'] = torch.empty(0).type(torch.LongTensor)
 
         sample = image, target
         return sample
@@ -104,12 +104,12 @@ class GeneralizedDataset:
             target = self.get_target(img_id)
             boxes = target["boxes"]
             labels = target["labels"]
-            masks = target["masks"]
+            #masks = target["masks"]
 
             try:
                 assert len(boxes) > 0, "{}: len(boxes) = 0".format(i)
                 assert len(boxes) == len(labels), "{}: len(boxes) != len(labels)".format(i)
-                assert len(boxes) == len(masks), "{}: len(boxes) != len(masks)".format(i)
+                #assert len(boxes) == len(masks), "{}: len(boxes) != len(masks)".format(i)
 
                 out.append((img_id, self._aspect_ratios[i]))
             except AssertionError as e:

@@ -4,8 +4,7 @@ from PIL import Image
 import torch
 from generalized_dataset import GeneralizedDataset
 
-       
-        
+      
 class COCODataset(GeneralizedDataset):
     def __init__(self, data_dir, split, train=False, mode = 'train'):
         super().__init__()
@@ -46,20 +45,15 @@ class COCODataset(GeneralizedDataset):
         anns = self.coco.loadAnns(ann_ids)
         boxes = []
         labels = []
-        masks = []
 
         if len(anns) > 0:
             for ann in anns:
                 boxes.append(ann['bbox'])
                 labels.append(ann["category_id"])
-                mask = self.coco.annToMask(ann)
-                mask = torch.tensor(mask, dtype=torch.uint8)
-                masks.append(mask)
 
             boxes = torch.tensor(boxes, dtype=torch.float32)
             boxes = self.convert_to_xyxy(boxes)
             labels = torch.tensor(labels)
-            masks = torch.stack(masks)
 
-        target = dict(image_id=torch.tensor([img_id]), boxes=boxes, labels=labels, masks=masks)
+        target = dict(image_id=torch.tensor([img_id]), boxes=boxes, labels=labels)#, masks=masks)
         return target
