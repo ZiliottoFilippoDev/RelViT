@@ -10,8 +10,6 @@ import torch
 import torch.nn as nn
 from collections import OrderedDict
 
-
-
 class FPNT2T(nn.Module):
     def __init__(self, num_classes=91, pretrained_path=None, fixed_size=(224,224), backbone_out_chan=512):
         super(FPNT2T, self).__init__()
