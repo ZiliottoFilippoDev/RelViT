@@ -17,7 +17,6 @@ HPU available: False, using: 0 HPUs
 /home/ziliottf/anaconda3/lib/python3.9/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:601: UserWarning: Checkpoint directory /home/ziliottf/coco/Pl_checkpoints exists and is not empty.
   rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
-
   | Name     | Type                 | Params
 --------------------------------------------------
 0 | model    | MaskRCNN             | 62.2 M
