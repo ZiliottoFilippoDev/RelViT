@@ -14,7 +14,7 @@ import sys
 import torch
 import torch.multiprocessing
 torch.multiprocessing.set_sharing_strategy('file_system')
-os.environ["WANDB_API_KEY"] = '4ccaa3b73b391ff0d2cc48c4a3e0ad80bc3ea600'
+os.environ["WANDB_API_KEY"] = '*************************'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=20)
