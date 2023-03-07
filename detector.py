@@ -259,7 +259,6 @@ class ObjectDetector(pl.LightningModule):
     ####################
     # DATA RELATED HOOKS
     ####################
-
     def prepare_data(self):
       tform_val = DetectionPresetEval()
       tform_train = DetectionPresetTrain(data_augmentation=self.augmentation)
