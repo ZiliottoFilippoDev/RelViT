@@ -66,7 +66,7 @@ class ObjectDetector(pl.LightningModule):
         images  = list(image for image in batch[0])
         targets = [{k:v for k, v in t.items()} for t in batch[1]]
 
-        loss_dict = self.model(images, targets)
+        loss_dict = self.model.forward(images, targets)
         self.log_losses(loss_dict)
         losses = sum(loss for loss in loss_dict.values())
         return losses
@@ -75,7 +75,7 @@ class ObjectDetector(pl.LightningModule):
         if self.current_epoch % 10 == 0:
             images  = list(image for image in batch[0])
             targets = [{k:v for k,v in t.items()} for t in batch[1]]
-            preds = self.model(images)
+            preds = self.model.forward(images)
             preds = [{k:v for k,v in t.items()} for t in preds]
 
             if self.mode == 'segm':
