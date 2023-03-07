@@ -1,0 +1,54 @@
+*running node: dellsrv5
+Thu Feb 16 17:18:09 2023
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.47.03    Driver Version: 510.47.03    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla T4            On   | 00000000:04:00.0 Off |                    0 |
+| N/A   52C    P8    16W /  70W |      0MiB / 15360MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+^MSanity Checking: 0it [00:00, ?it/s]^MSanity Checking:   0%|          | 0/2 [00:00<?, ?it/s]^MSanity Checking DataLoader 0:
+   0%|          | 0/2 [00:00<?, ?it/s]^MSanity Checking DataLoader 0:  50%|█████     | 1/2 [00:03<00:03,  3.63s/it]
+   ^MSanity Checking DataLoader 0: 100%|██████████| 2/2 [00:04<00:00,  2.44s/it]
+Training: 0it [00:00, ?it/s]^MTraining:   0%|          | 0/3500 [00:00<?, ?it/s]^MEpoch 0:   0%|          | 0/3500 [00:00<?, ?it/s]
+Epoch 0:   0%|          | 1/3500 [00:04<3:57:16,  4.07s/it]^MEpoch 0:   0%|          | 1/3500 [00:04<3:57:53,  4.08s/it, loss=6.8, v_num=dx1s]
+Epoch 0:   0%|          | 2/3500 [00:05<2:34:47,  2.66s/it, loss=6.8, v_num=dx1s]^MEpoch 0:   0%|          | 2/3500
+ [00:05<2:35:07,  2.66s/it, loss=5.75, v_num=dx1s]^MEpoch 0:   0%|          | 3/3500 [00:06<2:09:12,  2.22s/it, loss=5.75, v_num=dx1s]
+ Epoch 0:   0%|          | 3/3500 [00:06<2:09:25,  2.22s/it, loss=4.86, v_num=dx1s]^MEpoch 0:   0%|          | 4/3500
+[00:07<1:54:46,  1.97s/it, loss=4.86, v_num=dx1s]^MEpoch 0:   0%|          | 4/3500 [00:07<1:54:56,  1.97s/it, loss=4.37, v_num=dx1s]
+Epoch 0:   0%|          | 5/3500 [00:09<1:48:37,  1.86s/it, loss=4.37, v_num=dx1s]^MEpoch 0:   0%|          | 5/3500
+[00:09<1:48:44,  1.87s/it, loss=4.17, v_num=dx1s]^MEpoch 0:   0%|          | 6/3500 [00:10<1:43:59,  1.79s/it, loss=4.17, v_num=dx1s]
+Epoch 0:   0%|          | 6/3500 [00:10<1:44:06,  1.79s/it, loss=3.94, v_num=dx1s]^MEpoch 0:   0%|          | 7/3500 
+[00:11<1:39:23,  1.71s/it, loss=3.94, v_num=dx1s]^MEpoch 0:   0%|          | 7/3500 [00:11<1:39:28,  1.71s/it, loss=3.78, v_num=dx1s]
+Epoch 0:   0%|          | 8/3500 [00:13<1:37:46,  1.68s/it, loss=3.78, v_num=dx1s]^MEpoch 0:   0%|          | 8/3500 [00:13<1:37:51,  1.68s/it,
+loss=3.68, v_num=dx1s]^MEpoch 0:   0%|          | 9/3500 [00:14<1:34:45,  1.63s/it, loss=3.68, v_num=dx1s]^MEpoch 0:   0%|          | 9/3500
+[00:14<1:34:49,  1.63s/it, loss=3.54, v_num=dx1s]^MEpoch 0:   0%|          | 10/3500 [00:16<1:33:09,  1.60s/it, loss=3.54, v_num=dx1s]
+Epoch 0:   0%|          | 10/3500 [00:16<1:33:14,  1.60s/it, loss=3.48, v_num=dx1s]^MEpoch 0:   0%|          | 11/3500 [00:17<1:31:56,  1.58s/it,
+loss=3.48, v_num=dx1s]^MEpoch 0:   0%|          | 11/3500 [00:17<1:31:59,  1.58s/it, loss=3.41, v_num=dx1s]^MEpoch 0:   0%|          | 12/3500
+[00:18<1:30:08,  1.55s/it, loss=3.41, v_num=dx1s]^MEpoch 0:   0%|          | 12/3500 [00:18<1:30:11,  1.55s/it, loss=3.3, v_num=dx1s] 
+Epoch 0:   0%|          | 13/3500 [00:19<1:28:50,  1.53s/it, loss=3.3, v_num=dx1s]^MEpoch 0:   0%|          | 13/3500 [00:19<1:28:53,  1.53s/it,
+loss=3.22, v_num=dx1s]^MEpoch 0:   0%|          | 14/3500 [00:21<1:27:33,  1.51s/it, loss=3.22, v_num=dx1s]^MEpoch 0:   0%|          | 14/3500
+[00:21<1:27:36,  1.51s/it, loss=3.15, v_num=dx1s]^MEpoch 0:   0%|          | 15/3500 [00:22<1:26:27,  1.49s/it, loss=3.15, v_num=dx1s]^MEpoch
+0:   0%|          | 15/3500 [00:22<1:26:30,  1.49s/it, loss=3.08, v_num=dx1s]^MEpoch 0:   0%|          | 16/3500 [00:23<1:25:54,  1.48s/it,
+loss=3.08, v_num=dx1s]^MEpoch 0:   0%|          | 16/3500 [00:23<1:25:57,  1.48s/it, loss=3.04, v_num=dx1s]^MEpoch 0:   0%|          | 17/3500
+[00:24<1:24:59,  1.46s/it, loss=3.04, v_num=dx1s]^MEpoch 0:   0%|          | 17/3500 [00:24<1:25:01,  1.46s/it, loss=3, v_num=dx1s]   
+Epoch 0:   1%|          | 18/3500 [00:26<1:24:27,  1.46s/it, loss=3, v_num=dx1s]^MEpoch 0:   1%|          | 18/3500 [00:26<1:24:29, 
+1.46s/it, loss=2.96, v_num=dx1s]^MEpoch 0:   1%|          | 19/3500 [00:27<1:23:50,  1.45s/it, loss=2.96, v_num=dx1s]^MEpoch 0:   1%| 
+| 19/3500 [00:27<1:23:52,  1.45s/it, loss=2.91, v_num=dx1s]^MEpoch 0:   1%|          | 20/3500 [00:28<1:22:47,  1.43s/it, 
+loss=2.91, v_num=dx1s]^MEpoch 0:   1%|          | 20/3500 [00:28<1:22:49,  1.43s/it, loss=2.85, v_num=dx1s]^MEpoch 0:   1%|
+| 21/3500 [00:29<1:22:12,  1.42s/it, loss=2.85, v_num=dx1s]^MEpoch 0:   1%|          | 21/3500 [00:29<1:22:14, 
+1.42s/it, loss=2.61, v_num=dx1s]^MEpoch 0:   1%|          | 22/3500 [00:31<1:21:49,  1.41s/it, loss=2.61, v_num=dx1s]^M
+poch 0:   1%|          | 22/3500 [00:31<1:21:51,  1.41s/it, loss=2.48, v_num=dx1s]^MEpoch 0:   1%|          | 23/3500
+[00:32<1:21:15,  1.40s/it, loss=2.48, v_num=dx1s]^MEpoch 0:   1%|          | 23/3500 [00:32<1:21:17,  1.40s/it, loss=2.43, v_num=dx1s]
